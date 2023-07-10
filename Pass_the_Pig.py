@@ -1,5 +1,7 @@
 print("Welcome to Pass the Pig!")
 print("------------------------")
+print('Press "y" to role the') 
+print('pigs and "n" to pass')
 print("\n")
 
 import random
