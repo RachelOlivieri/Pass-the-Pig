@@ -3,6 +3,7 @@ print("------------------------")
 print('Press "y" to role the') 
 print('pigs and "n" to pass')
 print("\n")
+# Displays the basic rules of the game
 
 import random
 
@@ -11,23 +12,29 @@ score_p2 = 0
 
 round = "y"
 
+# While loop that goes through the game as long as the variable 'round' = "y"
 while round == "y":
 
+    # Another while loop that keeps the game running as long as the scores are bellow 100
     while score_p1 < 100 and score_p2 < 100:
-        role1 = random.randint(0, 9)
-        role2 = random.randint(0, 9)
+        # Calls the random module twice to generate a random number from 0-9
+        roll1 = random.randint(0, 9)
+        roll2 = random.randint(0, 9)
 
+        # Defines a function for the 1st player that takes roll1 and prints
+        # a message describing the the result of the role. It also updates
+        # the global variable 'Score_p1' with the appropriate num of pts 
         def player1():
 
             global score_p1
 
 
-            if role1 == 0:
+            if roll1 == 0:
                 print("Pig Out - 0 pts!")
                 score_p1 = 0;
                 print(f"Player 1:  {score_p1} | Player 2: {score_p2}")
                 print("\n")
-            elif role1 == 1:
+            elif roll1 == 1:
                 print("Sider - 1 pt!") 
                 score_p1 += 1
                 print(f"Player 1:  {score_p1} | Player 2: {score_p2}")
@@ -73,7 +80,9 @@ while round == "y":
                 print(f"Player 1:  {score_p1} | Player 2: {score_p2}")
                 print("\n")
  
-
+        # Defines a function for the 2nd player that takes roll1 and prints
+        # a message describing the the result of the role. It also updates
+        # the global variable 'Score_p2' with the appropriate num of pts 
         def player2():
         
             global score_p2
@@ -132,10 +141,12 @@ while round == "y":
 
         roller1 = input("Ready to role Player 1? (y/n) ")
 
+        # User input validation for the 1at player
         while roller1 not in ["y", "n"]:
             roller1 = input("Error. Please re-enter: ")
 
-
+        # Conditional statement that checks the value of the 'roller1' variable.
+        # What the user enters determines which part of the code runs 
         if roller1 == "n":
             print("Pass!") 
             print("\n")
@@ -162,13 +173,14 @@ while round == "y":
                     score_p1 = 0
                     score_p2 = 0
 
-
         roller2 = input("Ready to role Player 2? (y/n) ")
-
+ 
+        # User input validation for the 2nd player
         while roller2 not in ["y", "n"]:
             roller2 = input("Error. Please re-enter: ")
 
-
+        # Conditional statement that checks the value of the 'roller2' variable.
+        # What the user enters determines which part of the code runs 
         if roller2 == "n":
             print("Pass!")
             print("\n")
